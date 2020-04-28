@@ -1,0 +1,193 @@
+<html>
+<head>
+<title>Zelda battery hearts by @tvdmd</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<style>
+@font-face {
+	font-family:heart;
+	src: url("heart.ttf");
+}
+
+@font-face {
+	font-family:ganon;
+	src: url("ganon.ttf");
+}
+
+body
+{
+	margin:0;
+	padding:0;
+	text-shadow:1px 1px 0px rgba(55,55,55,0.2);
+	letter-spacing:1;
+
+	font-family: heart;
+	background-color: transparent;
+	text-transform: uppercase;
+}
+
+#tblBattery
+{
+	padding: 1px;
+	border-collapse: collapse;
+	margin: auto;
+	position: fixed;
+	top: 35%;
+	visibility: hidden;
+}
+
+#tdChargingStatus
+{
+	text-align: center;
+	font-family: ganon;
+}
+
+#tdHeartContainer
+{
+	text-align: center;
+}
+
+</style>
+<!-- Cycript data access -->
+<script type="text/cycript">
+	var getBatteryPercentage = function() { return [IS2System batteryPercent]; };
+	var getBatteryStateAsInteger = function() { return [IS2System batteryStateAsInteger]; };
+	var getBatteryState = function() { return [IS2System batteryState]; };
+</script>
+<script type="text/javascript" charset="utf-8">
+/* for testing
+var intBatteryPercentTemp = 100;
+var intBatteryState = 3;
+var blnOnlyShowWhenPluggedIn = true;
+var strChargeStatusFontSize = "12";
+
+function getBatteryPercentage()
+{
+	if (intBatteryPercentTemp<=0) intBatteryPercentTemp=100;
+	intBatteryPercentTemp = intBatteryPercentTemp-2;
+	return intBatteryPercentTemp;
+}
+
+function getBatteryStateAsInteger()
+{
+	return intBatteryState;
+}
+
+function getBatteryState()
+{
+	var strReturn = "";
+
+	switch (intBatteryState)
+	{
+		case 1:
+			strReturn = "UNPLUGGED";
+			break;
+		case 2:
+			strReturn = "CHARGING";
+			break;
+		case 3:
+			strReturn = "FULLY CHARGED";
+			break;
+		default:
+			strReturn = "UNKNOWN";
+	}
+
+	return strReturn;
+}
+*/
+</script>
+<script type="text/javascript" charset="utf-8">
+var strSymbol = "T";
+var strChargedCircleColor = "e24044";
+var strUnchargedCircleColor = "ffffff";
+
+function startOnLoad()
+{
+	// set the table width
+	document.getElementById('tblBattery').style.width = screen.availWidth;
+
+	// set the styles
+	document.getElementById('tdChargingStatus').style.fontSize = strChargeStatusFontSize;
+	document.getElementById('tdChargingStatus').style.color = "white";
+
+	document.getElementById('tdHeartContainer').style.fontSize = "20";
+	document.getElementById('tdHeartContainer').style.color = "white";
+
+	setInterval ("setBattery()", 1000);
+}
+
+function setBattery()
+{
+	var tblMain = document.getElementById('tblBattery');
+
+	var intBatteryPercent = parseInt(getBatteryPercentage());
+	var intBatteryLevel = Math.floor(intBatteryPercent/10);
+
+	// get the charging status, 1=not charging, 2=charging, 3=fullycharged
+	var intBatteryState = getBatteryStateAsInteger();
+	var strChargingStatus = getBatteryState() + " - " + intBatteryPercent;
+
+	tblMain.style.visibility = ((!blnOnlyShowWhenPluggedIn) || (blnOnlyShowWhenPluggedIn && (intBatteryState==2 || intBatteryState==3))) ? "visible":"hidden";
+
+	if ((!blnOnlyShowWhenPluggedIn) || (blnOnlyShowWhenPluggedIn && (intBatteryState==2 || intBatteryState==3)))
+	{
+		var objHeartContainer = document.getElementById('tdHeartContainer');
+
+		// clear the signal bars
+		while (objHeartContainer.hasChildNodes()) {
+			objHeartContainer.removeChild(objHeartContainer.lastChild);
+		}
+
+		var objItem;
+
+		for (var i = 0; i < 10; i++) {
+
+			objItem = document.createElement("label");
+			objItem.innerText = strSymbol;
+
+			if (i >= intBatteryLevel)
+			{
+				objItem.style.color = strUnchargedCircleColor;
+				objItem.style.opacity = "0.7";
+			}
+			else {
+				objItem.style.color = strChargedCircleColor;
+				objItem.style.opacity = "1";
+			}
+
+			objHeartContainer.appendChild(objItem);
+		}
+
+		//we need at least 1 heart to be present when at less than 10
+		if (intBatteryLevel < 1)
+		{
+			objItem = document.createElement("label");
+			objItem.innerText = strSymbol;
+			objItem.style.color = strChargedCircleColor;
+			objItem.style.opacity = "1";
+			objHeartContainer.replaceChild(objItem, objHeartContainer.childNodes[0]);
+		}
+	}
+	else {
+		// clear the charging status
+		strChargingStatus = "";
+	}
+
+	document.getElementById('tdChargingStatus').innerHTML = strChargingStatus;
+}
+</script>
+</head>
+<body onload="startOnLoad()">
+<table id="tblBattery">
+	<tr>
+		<td align=center valign=center><img src="link.png" width=50></td>
+	</tr>
+	<tr>
+		<td id="tdHeartContainer" nowrap></td>
+	</tr>
+	<tr id="trChargingStatus">
+		<td id="tdChargingStatus" nowrap></td>
+	</tr>
+</table>
+</body>
+</html>

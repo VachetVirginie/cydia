@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>tdMD Featured Themes</title>
+        <link rel="stylesheet" type="text/css" href="../resources/style.css"/>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <script type="text/javascript" src="../resources/thankssaurik.js"></script>
+        <script type="text/javascript">
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        function startOnLoad()
+        {
+          var strAnemoneLink = "";
+          var strWinterboardLink = "";
+
+          if (iOS)
+          {
+            strAnemoneLink = "cydia://package/com.anemonetheming.anemone";
+            strWinterboardLink = "cydia://package/com.saurik.winterboard";
+          }
+          else {
+            strAnemoneLink = "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=anemoneDp";
+            strWinterboardLink = "https://cydia.saurik.com/package/winterboard/";
+          }
+
+        	document.getElementById('lnkAnemone').href = strAnemoneLink;
+          document.getElementById('lnkWinterboard').href = strWinterboardLink;
+
+          showFeaturedThemes();
+          showFeaturedThemer();
+        }
+
+        function showFeaturedThemes()
+        {
+          var intArrayLength = 3;
+
+          var arrFeaturedThemes = new Array();
+          for (var i=0; i < intArrayLength; i++)
+          {
+            arrFeaturedThemes[i] = new Array(6);
+          }
+
+          arrFeaturedThemes[0][0] = "32aa";
+          arrFeaturedThemes[0][1] = "tdmd";
+          arrFeaturedThemes[0][2] = (iOS) ? "cydia://package/com.macciti.32aa":"http://cydia.saurik.com/package/com.macciti.32aa/";
+          arrFeaturedThemes[0][3] = "2.99";
+          arrFeaturedThemes[0][4] = "http://cydia.saurik.com/icon@2x/com.macciti.32aa.png";
+          arrFeaturedThemes[0][5] = 0;
+
+          arrFeaturedThemes[1][0] = "34aa";
+          arrFeaturedThemes[1][1] = "tdmd";
+          arrFeaturedThemes[1][2] = (iOS) ? "cydia://package/com.macciti.34aa":"http://cydia.saurik.com/package/com.macciti.34aa/";
+          arrFeaturedThemes[1][3] = "3.29";
+          arrFeaturedThemes[1][4] = "http://cydia.saurik.com/icon@2x/com.macciti.34aa.png";
+          arrFeaturedThemes[1][5] = 1;
+
+
+          arrFeaturedThemes[2][0] = "Pasties";
+          arrFeaturedThemes[2][1] = "tdmd";
+          arrFeaturedThemes[2][2] = (iOS) ? "cydia://package/com.macciti.pasties":"http://cydia.saurik.com/package/com.macciti.pasties/";
+          arrFeaturedThemes[2][3] = "3.50";
+          arrFeaturedThemes[2][4] = "http://cydia.saurik.com/icon@2x/com.macciti.pasties.png";
+          arrFeaturedThemes[2][5] = 1;
+
+
+          var lnkNewItemToAdd;
+          var imgNewItemToAdd;
+          var divNewItemToAdd1;
+          var divNewItemToAdd2;
+          var lblNewItemToAdd;
+          var pNewItemToAdd;
+          var pLabelThemeName;
+          var pLabelThemeAuthor;
+          var pBR;
+          var divDivider;
+          var pLabelThemePrice;
+
+          var fsThemes = document.createElement("fieldset");
+
+          for (var i=0; i < arrFeaturedThemes.length; i++)
+          {
+            lnkNewItemToAdd = document.createElement("a");
+            lnkNewItemToAdd.setAttribute('href',arrFeaturedThemes[i][2]);
+            lnkNewItemToAdd.setAttribute('id',"lnkTheme" + i);
+
+            imgNewItemToAdd = document.createElement("img");
+            imgNewItemToAdd.setAttribute('src',arrFeaturedThemes[i][4]);
+            //imgNewItemToAdd.className = "icon";
+            imgNewItemToAdd.setAttribute("style", "border-radius: 5px; float:left; margin: 7px;");
+            imgNewItemToAdd.setAttribute("width", "45");
+            lnkNewItemToAdd.appendChild(imgNewItemToAdd);
+
+            divNewItemToAdd1 = document.createElement("div");
+            divNewItemToAdd1.setAttribute("style","vertical-align:top;");
+            divNewItemToAdd2 = document.createElement("div");
+            lblNewItemToAdd = document.createElement("label");
+            pNewItemToAdd = document.createElement("p");
+            pNewItemToAdd.setAttribute("style","vertical-align:top;");
+
+            pLabelThemePrice = document.createElement('span');
+            pLabelThemePrice.setAttribute("style", "float:right;padding:4px;border-radius:5px;font-weight:normal;text-shadow:none;font-size:12px;color:#fff;background-color:#df3d3d;");
+            pLabelThemePrice.innerText = arrFeaturedThemes[i][3];
+
+            pLabelThemeName = document.createElement('label');
+            pLabelThemeName.innerText = arrFeaturedThemes[i][0];
+
+            pLabelThemeAuthor = document.createElement('label');
+            pLabelThemeAuthor.innerText = arrFeaturedThemes[i][1];
+
+            pNewItemToAdd.appendChild(pLabelThemeName);
+
+            pBR = document.createElement('br');
+            pNewItemToAdd.appendChild(pBR);
+
+            pNewItemToAdd.appendChild(pLabelThemeAuthor);
+
+            pNewItemToAdd.appendChild(pLabelThemePrice);
+
+            lblNewItemToAdd.appendChild(pNewItemToAdd);
+            divNewItemToAdd2.appendChild(lblNewItemToAdd);
+            divNewItemToAdd1.appendChild(divNewItemToAdd2);
+
+            lnkNewItemToAdd.appendChild(divNewItemToAdd1);
+
+            fsThemes.appendChild(lnkNewItemToAdd);
+
+            fsThemes.appendChild(getDivider());
+          }
+
+          document.getElementById('divFeaturedThemes').appendChild(fsThemes);
+        }
+
+        function showFeaturedThemer()
+        {
+          var intArrayLength = 1;
+
+          var arrFeaturedThemes = new Array();
+          for (var i=0; i < intArrayLength; i++)
+          {
+            arrFeaturedThemes[i] = new Array(6);
+          }
+
+          arrFeaturedThemes[0][0] = "Sublimity8";
+          arrFeaturedThemes[0][1] = "subywrex";
+          arrFeaturedThemes[0][2] = (iOS) ? "cydia://package/com.modmyi.sublimity8":"http://cydia.saurik.com/package/com.modmyi.sublimity8/";
+          arrFeaturedThemes[0][3] = "2.99";
+          arrFeaturedThemes[0][4] = "http://cydia.saurik.com/icon@2x/com.modmyi.sublimity8.png";
+          arrFeaturedThemes[0][5] = 0;
+
+          var lnkNewItemToAdd;
+          var imgNewItemToAdd;
+          var divNewItemToAdd1;
+          var divNewItemToAdd2;
+          var lblNewItemToAdd;
+          var pNewItemToAdd;
+          var pLabelThemeName;
+          var pLabelThemeAuthor;
+          var pBR;
+          var divDivider;
+          var pLabelThemePrice;
+
+          var imgFeaturedThemer;
+          var spnFeaturedThemerDetails;
+
+          var strFeaturedThemerTwitterHandle = "subywrex";
+          var strFeaturedThemerTwitter = "https://twitter.com/" + strFeaturedThemerTwitterHandle;
+          var strFeaturedThemername = "Subywrex";
+          var strFeaturedThemerImage = "featuredthemer/featuredthemer_avatar.png";
+
+          var fsFeaturedThemer = document.createElement("fieldset");
+          imgFeaturedThemer = document.createElement("img");
+          imgFeaturedThemer.setAttribute('src',strFeaturedThemerImage);
+          imgFeaturedThemer.setAttribute("width", "100%");
+          fsFeaturedThemer.appendChild(imgFeaturedThemer);
+
+          pBR = document.createElement('br');
+          fsFeaturedThemer.appendChild(pBR);
+
+          spnFeaturedThemerDetails = document.createElement("p");
+
+          spnFeaturedThemerDetails.innerHTML = strFeaturedThemername + " has been theming ever since he left the womb.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?";
+          spnFeaturedThemerDetails.setAttribute("style","width:100%; text-align:left;vertical-align:top;padding:10px;");
+          fsFeaturedThemer.appendChild(spnFeaturedThemerDetails);
+
+          fsFeaturedThemer.appendChild(getDivider());
+
+          for (var i=0; i < arrFeaturedThemes.length; i++)
+          {
+            lnkNewItemToAdd = document.createElement("a");
+            lnkNewItemToAdd.setAttribute('href',arrFeaturedThemes[i][2]);
+            lnkNewItemToAdd.setAttribute('id',"lnkTheme" + i);
+
+            imgNewItemToAdd = document.createElement("img");
+            imgNewItemToAdd.setAttribute('src',arrFeaturedThemes[i][4]);
+            //imgNewItemToAdd.className = "icon";
+            imgNewItemToAdd.setAttribute("style", "border-radius: 5px; float:left; margin: 7px;");
+            imgNewItemToAdd.setAttribute("width", "45");
+            lnkNewItemToAdd.appendChild(imgNewItemToAdd);
+
+            divNewItemToAdd1 = document.createElement("div");
+            divNewItemToAdd1.setAttribute("style","vertical-align:top;");
+            divNewItemToAdd2 = document.createElement("div");
+            lblNewItemToAdd = document.createElement("label");
+            pNewItemToAdd = document.createElement("p");
+            pNewItemToAdd.setAttribute("style","vertical-align:top;");
+
+            pLabelThemePrice = document.createElement('span');
+            pLabelThemePrice.setAttribute("style", "float:right;padding:4px;border-radius:5px;font-weight:normal;text-shadow:none;font-size:12px;color:#fff;background-color:#df3d3d;");
+            pLabelThemePrice.innerText = arrFeaturedThemes[i][3];
+
+            pLabelThemeName = document.createElement('label');
+            pLabelThemeName.innerText = arrFeaturedThemes[i][0];
+
+            //pLabelThemeAuthor = document.createElement('label');
+            //pLabelThemeAuthor.innerText = arrFeaturedThemes[i][1];
+
+            pNewItemToAdd.appendChild(pLabelThemeName);
+
+            pBR = document.createElement('br');
+            pNewItemToAdd.appendChild(pBR);
+
+            //pNewItemToAdd.appendChild(pLabelThemeAuthor);
+
+            pNewItemToAdd.appendChild(pLabelThemePrice);
+
+            lblNewItemToAdd.appendChild(pNewItemToAdd);
+            divNewItemToAdd2.appendChild(lblNewItemToAdd);
+            divNewItemToAdd1.appendChild(divNewItemToAdd2);
+
+            lnkNewItemToAdd.appendChild(divNewItemToAdd1);
+
+            fsFeaturedThemer.appendChild(lnkNewItemToAdd);
+
+            fsFeaturedThemer.appendChild(getDivider());
+          }
+
+          // add featured themer twitter
+
+          lnkNewItemToAdd = document.createElement("a");
+          lnkNewItemToAdd.setAttribute('href',strFeaturedThemerTwitter);
+          lnkNewItemToAdd.setAttribute('id',"lnkFeaturedThemerTwitter");
+
+          imgNewItemToAdd = document.createElement("img");
+          imgNewItemToAdd.setAttribute('src','../resources/twitter.png');
+          imgNewItemToAdd.setAttribute("style", "border-radius: 5px; float:left; margin: 7px;");
+          imgNewItemToAdd.className = "icon";
+          lnkNewItemToAdd.appendChild(imgNewItemToAdd);
+
+          divNewItemToAdd1 = document.createElement("div");
+          divNewItemToAdd1.setAttribute("style","vertical-align:top;");
+          divNewItemToAdd2 = document.createElement("div");
+          lblNewItemToAdd = document.createElement("label");
+          pNewItemToAdd = document.createElement("p");
+          pNewItemToAdd.setAttribute("style","vertical-align:top;");
+
+          var pLabelFeaturedThemerTwitterHandle = document.createElement('label');
+          pLabelFeaturedThemerTwitterHandle.innerText = "@" + strFeaturedThemerTwitterHandle;
+
+          pNewItemToAdd.appendChild(pLabelFeaturedThemerTwitterHandle);
+
+          lblNewItemToAdd.appendChild(pNewItemToAdd);
+          divNewItemToAdd2.appendChild(lblNewItemToAdd);
+          divNewItemToAdd1.appendChild(divNewItemToAdd2);
+
+          lnkNewItemToAdd.appendChild(divNewItemToAdd1);
+
+          fsFeaturedThemer.appendChild(lnkNewItemToAdd);
+          fsFeaturedThemer.appendChild(getDivider());
+
+          document.getElementById('divFeaturedThemer').appendChild(fsFeaturedThemer);
+        }
+
+        function getDivider()
+        {
+          var divDivider = document.createElement("div");
+          divDivider.setAttribute("style", "border-bottom:1px solid #ddd;");
+          return divDivider;
+        }
+        </script>
+        <style>
+        #divFeaturedThemes, #divFeaturedThemer
+        {
+          background-color: #fff;
+          border-top: 1px solid #ddd;
+        }
+        </style>
+    </head>
+    <body class="pinstripe" onload="startOnLoad()">
+        <panel>
+            <label>Featured Themer</label>
+            <div id="divFeaturedThemer"></div>
+            <label>Featured Themes</label>
+            <div id="divFeaturedThemes"></div>
+            <label>Donations</label>
+            <fieldset>
+              <div><div><label><p>
+                  <span>If you appreciate my work, consider a small donation to buy me coffee.&nbsp;&nbsp;</span>
+                  <br><br>
+                  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_donations">
+                  <input type="hidden" name="business" value="tdmd@outlook.com">
+                  <input type="hidden" name="lc" value="US">
+                  <input type="hidden" name="item_name" value="TDMD">
+                  <input type="hidden" name="no_note" value="0">
+                  <input type="hidden" name="currency_code" value="USD">
+                  <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+                  <input type="image" width=150 src="https://www.paypalobjects.com/webstatic/mktg/merchant_portal/button/donate.en.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+                </p></label></div>
+            </fieldset>
+            <label>Theming Engines</label>
+            <fieldset>
+              <a id="lnkAnemone">
+                  <img class="icon" src="anemone.png" width="58" height="58" style='border-radius: 8px;' >
+                  <div><div><label><p>Anemone</p></label></div></div>
+              </a>
+              <a id="lnkWinterboard" style="display:none;">
+                  <img class="icon" src="winterboard.png" width="58" height="58" style='border-radius: 8px;' >
+                  <div><div><label><p>Winterboard</p></label></div></div>
+              </a>
+            </fieldset>
+            <label>Links</label>
+            <fieldset>
+                <a href="https://twitter.com/tvdmd">
+                    <img class="icon" src="../resources/twitter.png" width="58" height="58" style='border-radius: 8px;' >
+                    <div><div><label><p>
+                        Twitter
+                    </p></label></div></div>
+                </a>
+            </fieldset>
+        </panel>
+    </body>
+</html>

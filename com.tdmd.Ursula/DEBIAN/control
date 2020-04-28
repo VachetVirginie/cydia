@@ -1,0 +1,10 @@
+Package: com.tdmd.Ursula
+Name: Ursula
+Version: 1.0.3
+Architecture: iphoneos-arm
+Description: Ursula - A colored status bar theme for Anemone
+Depends: com.anemonetheming.anemone
+Maintainer: TDMD <tdmd@outlook.com>
+Author: TDMD <tdmd@outlook.com>
+Section: Themes
+Depiction: https://tdmd.github.io/Depictions/com.tdmd.Ursula/index.html
