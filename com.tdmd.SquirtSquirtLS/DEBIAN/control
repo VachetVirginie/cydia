@@ -1,10 +1,10 @@
-Package: com.tdmd.SquirtSquirtLS
+Package: com.wasp.SquirtSquirtLS
 Name: Squirt Squirt for LockScreen
 Version: 1.0
 Architecture: iphoneos-arm
 Description: Squirt Squirt for LockScreen
 Depends: com.bushe.lockhtml4, com.matchstic.infostats2
-Maintainer: TDMD <tdmd@outlook.com>
-Author: TDMD <tdmd@outlook.com>
+Maintainer: wasp <wasp@outlook.com>
+Author: wasp <wasp@outlook.com>
 Section: Themes (LockScreens)
-Depiction: https://tdmd.github.io/Depictions/com.tdmd.SquirtSquirtLS/index.html
+Depiction: https://wasp.github.io/Depictions/com.wasp.SquirtSquirtLS/index.html

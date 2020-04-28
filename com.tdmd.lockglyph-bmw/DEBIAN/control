@@ -1,10 +1,10 @@
-Package: com.tdmd.lockglyph-bmw
+Package: com.wasp.lockglyph-bmw
 Name: LockGlyph BMW
 Version: 1.0
 Architecture: iphoneos-arm
 Description: LockGlyph BMW
 Depends: com.evilgoldfish.lockglyph
-Maintainer: TDMD <tdmd@outlook.com>
-Author: TDMD <tdmd@outlook.com>
+Maintainer: wasp <wasp@outlook.com>
+Author: wasp <wasp@outlook.com>
 Section: Themes (LockGlyph)
-Depiction: https://tdmd.github.io/Depictions/com.tdmd.lockglyph-bmw/index.html
+Depiction: https://wasp.github.io/Depictions/com.wasp.lockglyph-bmw/index.html

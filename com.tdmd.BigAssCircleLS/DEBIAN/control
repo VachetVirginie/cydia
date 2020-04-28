@@ -1,10 +1,10 @@
-Package: com.tdmd.BigAssCircleLS
-Name: tdMD Big Ass Circle Battery for LockHTML4
+Package: com.wasp.BigAssCircleLS
+Name: wasp Big Ass Circle Battery for LockHTML4
 Version: 1.0
 Architecture: iphoneos-arm
-Description: tdMD Big Ass Battery for LockHTML4
-Depends: com.bushe.lockhtml4, com.matchstic.infostats2, com.macciti.tdmdclockcalendarwidgetpack1
-Maintainer: TDMD <tdmd@outlook.com>
-Author: TDMD <tdmd@outlook.com>
+Description: wasp Big Ass Battery for LockHTML4
+Depends: com.bushe.lockhtml4, com.matchstic.infostats2, com.macciti.waspclockcalendarwidgetpack1
+Maintainer: wasp <wasp@outlook.com>
+Author: wasp <wasp@outlook.com>
 Section: Widgets
-Depiction: https://tdmd.github.io/Depictions/com.tdmd.BigAssCircleLS/index.html
+Depiction: https://wasp.github.io/Depictions/com.wasp.BigAssCircleLS/index.html

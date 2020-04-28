@@ -143,12 +143,12 @@ var media = {
 						break;
 		}
 		$$('art').style.backgroundImage = "url('img/" + img + "')";
-		[IS2Media registerForNowPlayingNotificationsWithIdentifier:"com.tdmd.IS2music" andCallback:^ void () {
+		[IS2Media registerForNowPlayingNotificationsWithIdentifier:"com.wasp.IS2music" andCallback:^ void () {
 		media.update();
 		}];
 	},
 	kill: function(){
-		[IS2Media unregisterForNotificationsWithIdentifier:"com.tdmd.IS2music"];
+		[IS2Media unregisterForNotificationsWithIdentifier:"com.wasp.IS2music"];
 		return null;
 	}
 };

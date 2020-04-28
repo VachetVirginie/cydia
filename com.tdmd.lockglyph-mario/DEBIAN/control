@@ -1,10 +1,10 @@
-Package: com.tdmd.lockglyph-mario
+Package: com.wasp.lockglyph-mario
 Name: LockGlyph Super Mario Bros
 Version: 1.0
 Architecture: iphoneos-arm
 Description: LockGlyph Super Mario Bros
 Depends: com.evilgoldfish.lockglyph
-Maintainer: TDMD <tdmd@outlook.com>
-Author: TDMD <tdmd@outlook.com>
+Maintainer: wasp <wasp@outlook.com>
+Author: wasp <wasp@outlook.com>
 Section: Themes (LockGlyph)
-Depiction: https://tdmd.github.io/Depictions/com.tdmd.lockglyph-mario/index.html
+Depiction: https://wasp.github.io/Depictions/com.wasp.lockglyph-mario/index.html

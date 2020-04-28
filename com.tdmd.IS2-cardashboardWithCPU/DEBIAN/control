@@ -1,10 +1,10 @@
-Package: com.tdmd.IS2-cardashboardWithCPU
+Package: com.wasp.IS2-cardashboardWithCPU
 Name: Car Dashboard with CPU for iWidget
 Version: 1.0.1
 Architecture: iphoneos-arm
 Description: Car Dashboard with CPU for iWidget
 Depends: com.eldwin.iwidgets, com.matchstic.infostats2
-Maintainer: TDMD <tdmd@outlook.com>
-Author: TDMD <tdmd@outlook.com>
+Maintainer: wasp <wasp@outlook.com>
+Author: wasp <wasp@outlook.com>
 Section: Widgets
-Depiction: https://tdmd.github.io/Depictions/com.tdmd.IS2-cardashboardWithCPU/index.html
+Depiction: https://wasp.github.io/Depictions/com.wasp.IS2-cardashboardWithCPU/index.html

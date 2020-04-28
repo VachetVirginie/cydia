@@ -1,10 +1,10 @@
-Package: com.tdmd.LS13
-Name: tdMD LS13 for LockHTML4
+Package: com.wasp.LS13
+Name: wasp LS13 for LockHTML4
 Version: 1.0
 Architecture: iphoneos-arm
-Description: tdMD LS13 for LockHTML4
-Depends: com.bushe.lockhtml4, com.macciti.tdmdclockcalendarwidgetpack1
-Maintainer: TDMD <tdmd@outlook.com>
-Author: TDMD <tdmd@outlook.com>
+Description: wasp LS13 for LockHTML4
+Depends: com.bushe.lockhtml4, com.macciti.waspclockcalendarwidgetpack1
+Maintainer: wasp <wasp@outlook.com>
+Author: wasp <wasp@outlook.com>
 Section: Themes (LockScreens)
-Depiction: https://tdmd.github.io/Depictions/com.tdmd.LS13/index.html
+Depiction: https://wasp.github.io/Depictions/com.wasp.LS13/index.html

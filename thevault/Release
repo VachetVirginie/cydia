@@ -1,8 +1,8 @@
-Origin: tdmd SUBSCRIPTION repo
-Label: tdmd SUBSCRIPTION repo
+Origin: wasp SUBSCRIPTION repo
+Label: wasp SUBSCRIPTION repo
 Suite: stable
 Version: 1.0
 Codename: repo
 Architectures: iphoneos-arm
 Components: main
-Description: tdmd SUBSCRIPTION repository
+Description: wasp SUBSCRIPTION repository

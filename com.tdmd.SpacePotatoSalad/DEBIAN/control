@@ -1,10 +1,10 @@
-Package: com.tdmd.SpacePotatoSalad
+Package: com.wasp.SpacePotatoSalad
 Name: Space Potato Salad
 Version: 1.2.2
 Architecture: iphoneos-arm
 Description: Space Potato Salad
 Depends: com.anemonetheming.anemone
-Maintainer: TDMD <tdmd@outlook.com>
-Author: TDMD <tdmd@outlook.com>
+Maintainer: wasp <wasp@outlook.com>
+Author: wasp <wasp@outlook.com>
 Section: Themes
-Depiction: https://tdmd.github.io/Depictions/com.tdmd.SpacePotatoSalad/index.html
+Depiction: https://wasp.github.io/Depictions/com.wasp.SpacePotatoSalad/index.html

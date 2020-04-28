@@ -1,1 +1,1 @@
-dpkg-deb -Zgzip -b com.tdmd.BrownCydia
+dpkg-deb -Zgzip -b com.wasp.BrownCydia

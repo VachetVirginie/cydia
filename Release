@@ -1,8 +1,8 @@
-Origin: tdmd repo
-Label: tdmd repo
+Origin: wasp repo
+Label: wasp repo
 Suite: stable
 Version: 1.0
 Codename: repo
 Architectures: iphoneos-arm
 Components: main
-Description: tdmd repository
+Description: wasp repository

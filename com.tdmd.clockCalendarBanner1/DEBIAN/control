@@ -1,10 +1,10 @@
-Package: com.tdmd.clockCalendarBanner1
-Name: tdMD Clock Calendar Banner 1
+Package: com.wasp.clockCalendarBanner1
+Name: wasp Clock Calendar Banner 1
 Version: 1.2.8
 Architecture: iphoneos-arm
-Description: tdMD Clock Calendar Banner 1
-Depends: com.eldwin.iwidgets, com.matchstic.infostats2, com.macciti.tdmdclockcalendarwidgetpack1
-Maintainer: TDMD <tdmd@outlook.com>
-Author: TDMD <tdmd@outlook.com>
+Description: wasp Clock Calendar Banner 1
+Depends: com.eldwin.iwidgets, com.matchstic.infostats2, com.macciti.waspclockcalendarwidgetpack1
+Maintainer: wasp <wasp@outlook.com>
+Author: wasp <wasp@outlook.com>
 Section: Widgets
-Depiction: https://tdmd.github.io/Depictions/com.tdmd.clockCalendarBanner1/index.html
+Depiction: https://wasp.github.io/Depictions/com.wasp.clockCalendarBanner1/index.html
